@@ -86,8 +86,7 @@ This function displays the structure of the dataset:
 - **spc_tbl_**: Indicates that it's a special type of tibble (a modern take on data frames in R).
 - The dataset has **7,043 rows** and **21 columns**.
 - Each column is listed with its name, data type (e.g., `chr` for character, `dbl` for double/numeric), and a sample of its content.
-- The **spec attribute** shows the expected types for each column when the data was read, which is useful for understanding how R interpreted your CSV file.
-
+  
 
 ### Next Steps
 Now I can proceed with the following 
