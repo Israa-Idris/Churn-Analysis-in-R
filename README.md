@@ -127,7 +127,7 @@ I noticed a high churn rate, so let's check for every factor to figure out the p
 ## Visualizing Churn by Categorical Variables
 
 ### 1. Create a Bar Plot for Gender and Churn:
-Here’s the code to create a bar plot showing the churn rate by gender:
+
 ```r
 # i Load the ggplot2 package
 # Create a bar plot for Churn by Gender
@@ -138,8 +138,11 @@ ggplot(data, aes(x = gender, fill = Churn)) +
 ```
  ![](churn_rate_by_gender.png) 
 
+ There is no difference in churn rate between male and female customers.
+
 
 ### 2. Create a Bar Plot for Partner and Churn
+
 ```r
 # Create a bar plot for Churn by Partner
 ggplot(data, aes(x = Partner, fill = Churn)) +
@@ -148,8 +151,12 @@ ggplot(data, aes(x = Partner, fill = Churn)) +
   theme_minimal()
 ```
  ![](churn_rate_by_partners.png) 
+ 
+ There is no difference in churn rate between customers with and without partners.
+
 
 ### 3. Create a Bar Plot for Internet Service and Churn
+
 ```r
 # Create a bar plot for Churn by Internet Service
 ggplot(data, aes(x = InternetService, fill = Churn)) +
@@ -159,7 +166,10 @@ ggplot(data, aes(x = InternetService, fill = Churn)) +
 ```
  ![](churn_with_internet_service.png) 
 
+ The churn rate is highest for customers using Fiber optic internet, followed by DSL. Customers with No internet service have the lowest churn rate.
+
 ### 4. Create a Bar Plot for Contract Type and Churn
+
 ```r
 # Create a bar plot for Churn by Contract Type
 ggplot(data, aes(x = Contract, fill = Churn)) +
@@ -169,8 +179,12 @@ ggplot(data, aes(x = Contract, fill = Churn)) +
 ```
 ![](churn_by_contract_type.png) 
 
+Customers with Month-to-Month contracts have the highest churn rate, followed by One Year contracts. Customers with Two Year contracts have the lowest churn rate.
+
 ### 5. Create a Box Plot for MonthlyCharges and Churn
+
 Since MonthlyCharges is a numeric variable, we can use a box plot to compare the distribution of monthly charges for customers who churned versus those who did not.
+
 ```r
 # Create a box plot for MonthlyCharges by Churn
 ggplot(data, aes(x = Churn, y = MonthlyCharges, fill = Churn)) +
@@ -182,6 +196,7 @@ ggplot(data, aes(x = Churn, y = MonthlyCharges, fill = Churn)) +
 
  Histogram
 # 6. Create a histogram for MonthlyCharges by Churn
+
 ```r
 ggplot(data, aes(x = MonthlyCharges, fill = Churn)) +
   geom_histogram(binwidth = 5, position = "dodge") +
@@ -190,8 +205,11 @@ ggplot(data, aes(x = MonthlyCharges, fill = Churn)) +
 ```
 ![](churn_monthly_charge.png) 
 
+slightly higher concentration of churners in the higher monthly charge ranges.
+
 ### 7. Create a Histogram for Tenure and Churn
-I will ll use facet_wrap() to create two histograms: one for customers who churned and one for those who didn’t, making it easier to compare the distributions.
+I will ll use facet_wrap() to create two histograms one for customers who churned and one for those who didn’t, making it easier to compare the distributions.
+
 ```r
 # Create a histogram for tenure by Churn
 ggplot(data, aes(x = tenure, fill = Churn)) +
@@ -200,6 +218,9 @@ ggplot(data, aes(x = tenure, fill = Churn)) +
   theme_minimal()
 ```
 ![](churn_tenur.png) 
+
+The chart reveals that the majority of customers who churn have been with the company for less than 10 months. As tenure increases, the proportion of customers who churn decreases.
+
 
 ### Create a Summary Table for Churn by Categorical Variables
 
